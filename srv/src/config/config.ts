@@ -1,6 +1,13 @@
 import dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
 
-dotenv.config();
+const envLocalPath = path.resolve(__dirname, '../../.env.local');
+const envPath = path.resolve(__dirname, '../../.env');
+
+dotenv.config({
+    path: fs.existsSync(envLocalPath) ? envLocalPath : envPath
+});
 
 interface Config {
     port: number;
