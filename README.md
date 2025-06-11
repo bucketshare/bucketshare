@@ -47,11 +47,11 @@
 <p><strong>Why Bucketlist?</strong></p>
 <p>This project aims to streamline the entire web development lifecycle. The core features include:</p>
 <ul class="list-disc pl-4 my-0">
-<li class="my-0">🎯 <strong>🛠️ TypeScript Support:</strong> Ensures type safety and consistent code quality across the backend and frontend.</li>
-<li class="my-0">🚀 <strong>🌐 Full-Stack Architecture:</strong> Combines Express server with React SSR, routing, and styling for scalable web apps.</li>
-<li class="my-0">📧 <strong>💌 Email Notifications:</strong> Facilitates user communication through integrated email services.</li>
-<li class="my-0">🧪 <strong>🧩 Automated Testing:</strong> Incorporates Jest and CI workflows for reliable, continuous validation.</li>
-<li class="my-0">🐳 <strong>🖥️ Docker Deployment:</strong> Supports containerization for consistent environments and scalable deployment.</li>
+<li class="my-0"> <strong> TypeScript Support:</strong> Ensures type safety and consistent code quality across the backend and frontend.</li>
+<li class="my-0"> <strong> Full-Stack Architecture:</strong> Combines Express server with React SSR, routing, and styling for scalable web apps.</li>
+<li class="my-0"> <strong> Email Notifications:</strong> Facilitates user communication through integrated email services.</li>
+<li class="my-0"> <strong> Automated Testing:</strong> Incorporates Jest and CI workflows for reliable, continuous validation.</li>
+<li class="my-0"> <strong> Docker Deployment:</strong> Supports containerization for consistent environments and scalable deployment.</li>
 </ul>
 <hr>
 <h2>Getting Started</h2>
