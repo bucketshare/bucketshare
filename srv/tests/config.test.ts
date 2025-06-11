@@ -1,5 +1,4 @@
 import config from './../src/config/config'
-import { body } from 'express-validator'
 
 describe("config testing", () => {
     it("should have the correct port", () => {
