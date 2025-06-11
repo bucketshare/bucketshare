@@ -19,10 +19,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Passe die Version bei Bedarf an
+          node-version: '18'
 
       - name: Install dependencies
+        working-directory: ./srv
         run: npm install
 
       - name: Run Jest tests
+        working-directory: ./srv
         run: npm test -- --coverage
