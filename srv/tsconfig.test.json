@@ -7,6 +7,6 @@
     },
     "include": [
         "**/*.test.ts",
-        "**/__tests__/**/*.ts"
+        "**/tests/**/*.ts"
     ]
 }
