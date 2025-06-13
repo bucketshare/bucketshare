@@ -19,15 +19,15 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        working-directory: ./client
+        working-directory: ./cli
         run: npm install
 
       - name: Build React app
-        working-directory: ./client
+        working-directory: ./cli
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        working-directory: ./client
+        working-directory: ./cli
         run: npm run deploy
         env:
           CI: true
