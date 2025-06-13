@@ -22,6 +22,11 @@ jobs:
         working-directory: ./cli
         run: npm install
 
+      - name: Set Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
       - name: Build React app
         working-directory: ./cli
         run: npm run build
