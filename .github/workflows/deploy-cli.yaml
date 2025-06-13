@@ -31,9 +31,26 @@ jobs:
         working-directory: ./cli
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        working-directory: ./cli
-        run: npm run deploy
+      - name: Deploy to gh-pages branch
+        run: |
+          # Configure Git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Clone the gh-pages branch (or create if it doesn't exist)
+          git clone --branch gh-pages https://github.com/${{ github.repository }} gh-pages || git clone https://github.com/${{ github.repository }} gh-pages
+          
+          cd gh-pages
+
+          # Remove old files
+          git rm -rf .
+
+          # Copy new build files
+          cp -r ../client/build/* .
+
+          # Commit and push
+          git add .
+          git commit -m "Deploy React app to gh-pages [skip ci]"
+          git push origin gh-pages --force
         env:
-          CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
