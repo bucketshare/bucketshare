@@ -46,7 +46,7 @@ jobs:
           git rm -rf .
 
           # Copy new build files
-          cp -r ../build/client/* .
+          cp -r ./build/client/* .
 
           # Commit and push
           git add .
