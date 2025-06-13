@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DotPulse } from 'ldrs/react'
 import 'ldrs/react/DotPulse.css'
 import { motion } from "framer-motion";
-import { login } from "~/services/login";
+import { login } from "~/services/Login";
 
 const PROVIDERS = [
   {
