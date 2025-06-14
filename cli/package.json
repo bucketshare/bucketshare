@@ -7,7 +7,6 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "deploy": "gh-pages -d build --repo=https://x-access-token:${GITHUB_TOKEN}@github.com/bucketshare/bucketshare.git"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
