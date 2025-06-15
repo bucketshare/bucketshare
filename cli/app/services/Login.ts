@@ -1,16 +1,13 @@
-export async function login(username: string, password: string) {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
-        credentials: 'include',
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username, password })
-    });
+type Status =
+    | { status: "success"; data: object }
+    | { status: "loading" }
+    | { status: "error"; error: Error };
 
-    if (!response.ok) {
-        throw new Error('Login failed');
+export function login(email: string, password: string) {
+    return async function () {
+        const status: Status = { status: "loading" }
+        // TODO: login in this function
+
+        return status
     }
-
-    return await response.json();
 }
