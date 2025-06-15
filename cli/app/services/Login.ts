@@ -1,13 +1,9 @@
-type Status =
-    | { status: "success"; data: object }
-    | { status: "loading" }
-    | { status: "error"; error: Error };
+import { Status } from "../types/request"
 
-export function login(email: string, password: string) {
-    return async function () {
-        const status: Status = { status: "loading" }
-        // TODO: login in this function
 
-        return status
-    }
+export function login(email: string, password: string): Status {
+    const status: Status = { status: "success", data: { email, password } }
+    // TODO: login in this function
+
+    return status
 }

@@ -10,9 +10,13 @@ export default function Login() {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault()
-        const { loading } = await login(email, password)
-        setIsLoggingIn(loading)
-        setTimeout(() => setIsLoggingIn(false), 1500)
+        const req = login(email, password)
+
+        if (req.status === "success") {
+            setIsLoggingIn(false)
+        } else if (req.status === "error") {
+            throw new Error(req.error.message)
+        }
     }
 
     return (
