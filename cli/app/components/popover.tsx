@@ -60,37 +60,52 @@ export default function Popover({ children }: PopoverProps) {
                             onClick={() => setOpen(false)}
                         />
 
-                        <motion.div
-                            key="content"
-                            initial={{ y: 50, opacity: 0, scale: 0.95 }}
-                            animate={{ y: 0, opacity: 1, scale: 1, transition: { type: 'spring', bounce: 0.2, duration: 0.4 } }}
-                            exit={{ y: 50, opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                            drag="y"
-                            dragConstraints={{ top: 0, bottom: 300 }}
-                            dragElastic={0.2}
-                            onDragEnd={handleDragEnd}
-                            className="relative bg-white rounded-t-2xl sm:rounded-2xl shadow-xl w-full sm:w-[90%] max-w-lg h-[75%] sm:h-auto p-4 sm:p-6 overflow-y-auto"
-                        >
-                            <div className="sm:hidden flex justify-center mb-3">
-                                <div
-                                    style={{ width: 40, height: 4, borderRadius: 2 }}
-                                    className="bg-gray-300"
-                                />
-                            </div>
+                       {/* VORHER: motion.div hatte drag="y" und onDragEnd */}
 
-                            <>
-                                {content}
-                            </>
+<motion.div
+    key="content"
+    initial={{ y: 50, opacity: 0, scale: 0.95 }}
+    animate={{
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        transition: { type: 'spring', bounce: 0.2, duration: 0.4 },
+    }}
+    exit={{
+        y: 50,
+        opacity: 0,
+        scale: 0.95,
+        transition: { duration: 0.2 },
+    }}
+    className="relative bg-white rounded-t-2xl sm:rounded-2xl shadow-xl w-full sm:w-[90%] max-w-lg h-[75%] sm:h-auto p-4 sm:p-6 overflow-y-auto"
+>
+    {/* Drag-Bar (nur hier ist das Ziehen erlaubt) */}
+    <motion.div
+        drag="y"
+        dragConstraints={{ top: 0, bottom: 300 }}
+        dragElastic={0.2}
+        onDragEnd={handleDragEnd}
+        className="sm:hidden flex justify-center mb-3 cursor-grab active:cursor-grabbing"
+    >
+        <div
+            style={{ width: 40, height: 4, borderRadius: 2 }}
+            className="bg-gray-300"
+        />
+    </motion.div>
 
-                            <div className="mt-4 text-right">
-                                <button
-                                    onClick={() => setOpen(false)}
-                                    className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 w-full sm:w-auto"
-                                >
-                                    Close
-                                </button>
-                            </div>
-                        </motion.div>
+    <>
+        {content}
+    </>
+
+    <div className="mt-4 text-right">
+        <button
+            onClick={() => setOpen(false)}
+            className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 w-full sm:w-auto"
+        >
+            Close
+        </button>
+    </div>
+</motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
