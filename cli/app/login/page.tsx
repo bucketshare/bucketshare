@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { login } from "../services/Login"
+import Image from "next/image"
 
 export default function Login() {
     const [isLoggingIn, setIsLoggingIn] = useState(false)
@@ -103,7 +104,7 @@ export default function Login() {
                         onClick={() => alert("Google sign-in clicked!")}
                         disabled={isLoggingIn}
                     >
-                        <img
+                        <Image
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/2048px-Google_%22G%22_logo.svg.png"
                             alt="Google logo"
                             className="w-5 h-5"
@@ -120,7 +121,7 @@ export default function Login() {
                         onClick={() => alert("GitHub sign-in clicked!")}
                         disabled={isLoggingIn}
                     >
-                        <img
+                        <Image
                             src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
                             alt="GitHub logo"
                             className="w-5 h-5 invert"
