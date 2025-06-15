@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { login } from "../services/Login"
 import Image from "next/image"
+import { handleLoginWithGoogle } from "../services/Google"
+import { handleLoginWithGithub } from "../services/Github"
 
 export default function Login() {
     const [isLoggingIn, setIsLoggingIn] = useState(false)
@@ -101,7 +103,7 @@ export default function Login() {
                         onMouseDown={() => setPressed("Google")}
                         onMouseUp={() => setPressed(null)}
                         onMouseLeave={() => setPressed(null)}
-                        onClick={() => alert("Google sign-in clicked!")}
+                        onClick={() => handleLoginWithGoogle()}
                         disabled={isLoggingIn}
                     >
                         <Image
@@ -118,7 +120,7 @@ export default function Login() {
                         onMouseDown={() => setPressed("GitHub")}
                         onMouseUp={() => setPressed(null)}
                         onMouseLeave={() => setPressed(null)}
-                        onClick={() => alert("GitHub sign-in clicked!")}
+                        onClick={() => handleLoginWithGithub()}
                         disabled={isLoggingIn}
                     >
                         <Image

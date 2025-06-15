@@ -17,10 +17,13 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.3",
     "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^24.0.0",
     "@types/nodemailer": "^6.4.17",
+    "@types/uuid": "^10.0.0",
     "dotenv": "^16.5.0",
     "eslint": "^9.28.0",
     "express": "^5.1.0",
@@ -36,7 +39,11 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "express-validator": "^7.2.1",
-    "nodemailer": "^7.0.3"
+    "firebase": "^11.9.1",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^7.0.3",
+    "uuid": "^11.1.0"
   }
 }
