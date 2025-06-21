@@ -1,10 +1,10 @@
 ﻿{
-    "stage":  "",
+    "stage":  null,
     "files":  "false",
     "desc":  "false",
-    "name":  "",
-    "gitRepo":  "",
+    "name":  "Jamie Poeffel",
+    "gitRepo":  "https://github.com/bucketshare/bucketshare",
     "version":  "1.0.0",
-    "projectName":  "Bucketlist",
+    "projectName":  "bucketshare",
     "email":  ""
 }
