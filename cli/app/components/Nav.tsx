@@ -15,7 +15,7 @@ function BottomNav() {
     ];
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#e8ebf2] shadow-md md:hidden">
+        <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#e8ebf2] shadow-md">
             <div className="flex justify-around items-center py-2">
                 {navItems.map(({ href, icon, label }) => {
                     const isActive = pathname === href;

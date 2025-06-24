@@ -5,7 +5,7 @@ import Title from "../components/Title";
 function Profile() {
 
     const firstname = "Julian"
-    const lastname = "Amschwanz"
+    const lastname = "Amschwand"
 
 
 
