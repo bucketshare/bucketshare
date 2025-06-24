@@ -5,6 +5,7 @@ import Input from "../components/Input";
 import GroupList from "../components/Groups";
 import { useState } from "react";
 import ExploreItem from "../components/ExploreItem";
+import BottomNav from "../components/Nav";
 
 function Home() {
     const groups = ["all", "travaling", "adventure"];
@@ -19,6 +20,20 @@ function Home() {
         },
         {
             id: "2",
+            title: "hello",
+            desc: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+            url: "https://placehold.co/600x400",
+            count: 10
+        },
+        {
+            id: "3",
+            title: "hello",
+            desc: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+            url: "https://placehold.co/600x400",
+            count: 10
+        },
+        {
+            id: "4",
             title: "hello",
             desc: "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
             url: "https://placehold.co/600x400",
@@ -41,13 +56,19 @@ function Home() {
                     <GroupList groups={groups} onSelect={setSelectedGroup} selected={selectedGroup} />
                 </div>
 
-                <div className="mx-8 gap-2">
-                    {
-                        items.map((e) => {
-                            return (<ExploreItem key={e.id} id={e.id} title={e.title} description={e.desc} imageUrl={e.url} itemCount={e.count} />)
-                        })
-                    }
+                <div className="mx-8 flex flex-col justify-center items-center gap-2 pb-15">
+                    {items.map((e) => (
+                        <ExploreItem
+                            key={e.id}
+                            title={e.title}
+                            description={e.desc}
+                            imageUrl={e.url}
+                            itemCount={e.count}
+                        />
+                    ))}
                 </div>
+
+                <BottomNav />
             </div>
         </>
     );
