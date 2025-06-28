@@ -6,11 +6,12 @@ import GroupList from "../components/Groups";
 import { useState } from "react";
 import ExploreItem from "../components/ExploreItem";
 import BottomNav from "../components/Nav";
+import { Item } from "../types/item";
 
 function Home() {
     const groups = ["all", "travaling", "adventure"];
     const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
-    const items = [
+    const items: Item[] = [
         {
             id: "1",
             title: "hello",

@@ -4,6 +4,7 @@ import React from 'react';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     label: string;
     variant?: 'normal' | 'extra';
+    rounded?: 'normal' | 'extra';
     icon?: React.ReactNode;
     loading?: boolean;
 }
@@ -11,6 +12,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = ({
     label,
     variant = 'normal',
+    rounded = 'extra',
     icon,
     loading = false,
     className = '',
@@ -18,17 +20,22 @@ const Button: React.FC<ButtonProps> = ({
     ...props
 }) => {
     const baseStyles =
-        'w-full py-3 text-center font-semibold text-sm flex items-center justify-center gap-2 rounded-full transition';
+        'w-full py-3 text-center font-semibold text-sm flex items-center justify-center gap-2 transition';
 
     const variantStyles = {
         normal: 'bg-blue-600 text-white hover:bg-blue-700',
-        extra: 'bg-gray-100 text-black hover:bg-gray-200',
+        extra: 'bg-gray-200 text-black hover:bg-gray-300',
     };
+
+    const roundedStyles = {
+        normal: 'rounded-xl',
+        extra: 'rounded-full',
+    }
 
     return (
         <button
             {...props}
-            className={`${baseStyles} ${variantStyles[variant]} ${className} ${loading || disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`${baseStyles} ${variantStyles[variant]} ${roundedStyles[rounded]} ${className} ${loading || disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
             disabled={loading || disabled}
         >
             {loading ? (

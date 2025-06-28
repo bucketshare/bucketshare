@@ -4,9 +4,10 @@ import { NameToPicture } from "../helpers/NameToPicture";
 type Props = {
     firstname: string;
     lastname: string;
+    className?: string;
 };
 
-export function Avatar({ firstname, lastname }: Props) {
+export function Avatar({ firstname, lastname, className }: Props) {
     const [img, setImg] = useState<HTMLImageElement | null>(null);
 
     useEffect(() => {
@@ -19,7 +20,7 @@ export function Avatar({ firstname, lastname }: Props) {
 
     return (
         <div>
-            {img ? <img src={img.src} alt="User Avatar" /> : <p>Loading avatar...</p>}
+            {img ? <img src={img.src} alt="User Avatar" className={className} /> : <p>Loading avatar...</p>}
         </div>
     );
 }
